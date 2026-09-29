@@ -1,7 +1,0 @@
-const grid=document.getElementById('productGrid'), search=document.getElementById('search'), filter=document.getElementById('filter'), empty=document.getElementById('empty');
-function render(){const q=(search.value||'').toLowerCase().trim(), f=filter.value; const list=products.filter(p=>(f==='All'||p.category===f)&&(`${p.name} ${p.category} ${p.description}`.toLowerCase().includes(q))); grid.innerHTML=list.map(p=>`<article class="product-card"><div class="product-image"><span class="badge">${p.badge}</span><div class="product-art">${p.art}</div></div><div class="product-body"><div class="product-category">${p.category.toUpperCase()}</div><h3>${p.name}</h3><div class="rating">★ ${p.rating} / 5</div><p>${p.description}</p><div class="card-bottom"><span class="price">${p.price}</span><a class="view-btn" href="${p.link}" onclick="return productNotice(event)">View product →</a></div></div></article>`).join(''); empty.hidden=list.length>0;}
-function productNotice(e){if(e.currentTarget.getAttribute('href')==='#'){e.preventDefault();alert('Add your real affiliate product URL here in js/products.js.');return false}return true;}
-search.addEventListener('input',render);filter.addEventListener('change',render);
-document.querySelectorAll('.category').forEach(a=>a.addEventListener('click',()=>{filter.value=a.dataset.filter;render()}));
-document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('mobileNav').classList.toggle('open'));
-render();
