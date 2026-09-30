@@ -1,1 +1,0 @@
-HomeFix India V2: search, category filter, product details, mobile responsive. Replace demo Amazon links with your own tagged affiliate product links after joining the program.
